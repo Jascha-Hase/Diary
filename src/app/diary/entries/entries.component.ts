@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StoryInfo } from '../../addstory/body/story-info';
-import { currentId } from 'async_hooks';
-import { all } from 'q';
-import { ThrowStmt } from '@angular/compiler';
+import { DataService } from 'src/app/_service/data.service';
 
 @Component({
   selector: 'diary-entries',
@@ -11,17 +9,20 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class EntriesComponent implements OnInit {
 
-  @Input() stories: StoryInfo[];
+  stories: StoryInfo[];
 
-  delete(index){
-    this.stories.splice(index,1);  
+  constructor(private dataService: DataService){
+
+  }
+
+  getStorys(): void {
+    this.stories = this.dataService.get();
   }
 
   ngOnInit() {
-    
+    this.getStorys();
+    console.log(this.stories);
   }
-
-
 
 }
 

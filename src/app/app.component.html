@@ -1,5 +1,11 @@
 <app-template-header></app-template-header>
-<div>
+<!-- <div>
     <app-template-form (sendStory)="receiveStory($event)" [page]="page" [stories]="stories"></app-template-form>
 </div>
-<app-template-footer (showPage)="receiveMessage($event)"></app-template-footer>
+<app-template-footer (showPage)="receiveMessage($event)"></app-template-footer> -->
+<router-outlet></router-outlet>
+<nav class="entry">
+    <a routerLink="/diary" routerLinkAktivation="aktiv"><img class="image" src="../assets/img/diary.png" width="250" height="250" alt="Coyo Picture"></a>
+    <a routerLink="/addstory" routerLinkAktivation="aktiv"><img class="image" src="../assets/img/editButton.png" width="250" height="250" alt="Coyo Picture"></a>
+    <a routerLink="/profile" routerLinkAktivation="aktiv"><img class="image" src="../assets/img/profile.png" width="250" height="250" alt="Coyo Picture"></a>
+</nav>

@@ -9,8 +9,16 @@ import { FormComponent } from './profile/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { BodyComponent } from './addstory/body/body.component';
 import { EntriesComponent } from './diary/entries/entries.component';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+
+
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
     TemplateHeaderComponent,
@@ -19,10 +27,7 @@ import { EntriesComponent } from './diary/entries/entries.component';
     FormComponent,
     BodyComponent,
     EntriesComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
+    routingComponents,
   ],
   providers: [],
   bootstrap: [AppComponent,]

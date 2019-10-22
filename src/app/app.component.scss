@@ -1,0 +1,16 @@
+@import '../styles.scss';
+.image{
+    cursor: pointer;
+  }
+  .image:hover{
+    opacity: 0.5;
+    color: $silver;
+  }
+  .entry {
+    display: flex;
+    font-family: "Source Sans Pro", sans-serif;
+    color: $snow;
+    margin-left: 27.354%;
+    margin-right: 27.354%;
+    margin-top: 20px;
+  }

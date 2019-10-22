@@ -31,7 +31,7 @@ h1{
     margin-left: 5%;
     margin-right: 5%;
     font-size: 30px;
-    justify-content: start;
+    justify-content: flex-start;
     border-bottom: 1px solid white;
   }
   .entry:first-child > div{
@@ -61,4 +61,14 @@ h1{
     background: #9BBF29;
     color: #FFFFFF;
     border: 2px solid #317DC1; 
+}
+.pageDesign{
+    text-align: center;
+    border: 4px solid #313D4D;
+    margin-top: 20px;
+    overflow: auto;
+    margin-left: 27.354%;
+    margin-right: 27.354%;
+    height: 570px;
+    background: #FFFFFF;
 }
