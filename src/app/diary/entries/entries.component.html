@@ -1,4 +1,4 @@
-<form>
+<form  class="pageDesign">
     <h1>Your Diary Storys</h1>
     <div class="">
         <div class="entry">
@@ -9,7 +9,7 @@
         <div class="entry" *ngFor="let story of stories; let i = index">
             <div class="day">{{story.date}}</div>
             <div class="story">{{story.story}}</div>
-            <div class="options"><button (click)="delete(i)">Delete Entrie</button></div>
+            <div class="options"><button (click)="dataService.delete(i)">Delete Entrie</button></div>
         </div>
     </div>
 </form>

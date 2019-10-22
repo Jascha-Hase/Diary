@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, ElementRef } from '@angular/core';
-import { StoryInfo} from './story-info';
+import { StoryInfo } from './story-info';
+import { DataService } from '../../_service/data.service';
 
 
 @Component({
@@ -9,12 +10,10 @@ import { StoryInfo} from './story-info';
 })
 export class BodyComponent implements OnInit {
 
-  @Output() sendStory = new EventEmitter<StoryInfo>();
-
 
   private infostory: StoryInfo;
 
-  constructor() { 
+  constructor(private dataService: DataService) {
     this.infostory = new StoryInfo();
     console.log(this)
   }
@@ -24,8 +23,8 @@ export class BodyComponent implements OnInit {
 
   enter() {
     console.log(this.infostory);
-    this.sendStory.emit(this.infostory);
+    this.dataService.add(this.infostory);
     this.infostory = new StoryInfo();
-}
+  }
 
 }
