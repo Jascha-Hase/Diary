@@ -1,0 +1,34 @@
+<form (ngSubmit)="log()" #profileForm="ngForm">
+    <h1>Your Profile</h1>
+
+    <img id="changePb" [src]="url ? url : '../../../assets/img/foto.png'" width="150" height="150" alt="Coyo Picture">
+    <br>
+    <div class="">
+        <br>
+        <input (change)="onSelectFile($event)" type="file">
+        <br>
+        <label id="enteredFirstName" for="firstName">First Name: </label>
+        <input class="input" type="text" id="firstName" placeholder="First Name" [(ngModel)]="info.firstName" name="name" [disabled]="saved" required>
+        <br>
+        <label id="enteredSecondName" for="secondName">Second Name: </label>
+        <input class="input" type="text" id="secondName" placeholder="Second Name" [(ngModel)]="info.lastName" name="lastName" [disabled]="saved" required>
+        <br>
+        <label id="enteredBirthday" for="birthday">Birthday: </label>
+        <input class="input" type="date" id="birthday" placeholder="Birthday" [(ngModel)]="info.birthday" name="birthday" [disabled]="saved" required>
+        <br>
+        <label id="enteredAdress" for="adress">Adress: </label>
+        <input class="input" type="text" id="adress" placeholder="Adress" [(ngModel)]="info.adress" name="adress" [disabled]="saved" required>
+        <br>
+        <label id="enteredPostcode" for="postcode">Post Code: </label>
+        <input class="input" type="text" id="postcode" placeholder="Post Code" [(ngModel)]="info.zipCode" name="zipCode" [disabled]="saved" required>
+        <br>
+        <label id="enteredCity" for="city">City: </label>
+        <input class="input" type="text" id="city" placeholder="City" [(ngModel)]="info.city" name="city" [disabled]="saved" required>
+        <br>
+        <label id="enteredCountry" for="country">Country: </label>
+        <input class="input" type="text" id="country" placeholder="Country" [(ngModel)]="info.country" name="country" [disabled]="saved" required>
+        <br>
+        <button type="submit" [disabled]="!profileForm.form.valid" id="edit">Click so save</button>
+        <input (click)="reset()" type="reset" id="reset" value="Reset settings">
+    </div>
+</form>

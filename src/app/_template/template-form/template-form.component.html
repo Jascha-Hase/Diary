@@ -1,0 +1,15 @@
+<div *ngIf="page=== 'profilePage'" id="profile">
+    <div class="pageDesign">
+        <profile-form></profile-form>
+    </div>
+</div>
+<div *ngIf="page=== 'addStoryPage'" class="page" id="add">
+    <div class="pageDesign">
+        <addstory-body (sendStory)="receiveStory($event)"></addstory-body>
+    </div>
+</div>
+<div *ngIf="page=== 'storyPage'" class="page" id="diary">
+    <div class="pageDesign">
+        <diary-entries [stories]="stories"></diary-entries>
+    </div>
+</div>

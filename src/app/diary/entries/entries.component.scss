@@ -1,0 +1,64 @@
+button#add{
+    height: 30px;
+    width: 300px;
+    cursor: pointer;
+    text-align: center;
+    background: #9BBF29;
+    color: #FFFFFF;
+    border: 2px solid #317DC1; 
+    margin-top: 5px;
+}
+button#removeButton{
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    background: #9BBF29;
+    color: #FFFFFF;
+    border: 2px solid #317DC1; 
+}
+h1{
+    background-color: #313D4D;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-top: 0px;
+}
+.entry {
+    display: flex;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #FFFFFF;
+    background: #313D4D;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 30px;
+    justify-content: start;
+    border-bottom: 1px solid white;
+  }
+  .entry:first-child > div{
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+  .entry > .options {
+      width: 120px;
+      flex-shrink: 0;
+  }
+  .entry > .day {
+    width: 160px;
+    flex-shrink: 0;
+}
+  .entry > div {
+      padding: 5px;
+      text-align: left;
+  }
+  .entry > .story {
+      flex-grow: 1;
+  }
+  button#removeEntry{
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+    background: #9BBF29;
+    color: #FFFFFF;
+    border: 2px solid #317DC1; 
+}

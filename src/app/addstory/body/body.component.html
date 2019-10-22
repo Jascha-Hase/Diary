@@ -1,0 +1,18 @@
+<form (ngSubmit)="enter(); ('Test')" #addStoryBody="ngForm">
+    <h1>Add a Story to your Diary</h1>
+    <br>
+    <br>
+    <div class="entry">
+        <div class="day">Day</div>
+        <div class="story">Story</div>
+    </div>
+    <div class="entry">
+        <div class="day">
+            <input id="addDay" type="date" [(ngModel)]="infostory.date" name="date" required>
+        </div>
+        <div class="story">
+            <textarea id="addStory" cols="75" [(ngModel)]="infostory.story" name="story" rows="6" required></textarea>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!addStoryBody.form.valid" id="add">Add Diary Entry</button>
+</form>
