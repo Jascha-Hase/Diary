@@ -1,24 +1,39 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { StoryInfo } from '../addstory/body/story-info';
+import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
   stories: StoryInfo[] = [];
 
+  constructor(){ 
+    let stories = this.get();
+  }
+
   add(story: StoryInfo){
     this.stories.push(story);
-    console.log(story);
+    this.setLocalStorageStories(this.stories);
+
   }
   get(){
-    return this.stories;
+    let localStorageItem = JSON.parse(localStorage.getItem('stories'));
+    return localStorageItem == null ? [] : localStorageItem.stories;
   }
 
-  delete(index){
-    this.stories.splice(index,1);  
+  delete(i: number){
+    let localStorageItem = JSON.parse(localStorage.getItem('stories'));
+    localStorageItem.stories.splice(i,1);
+    localStorage.setItem('stories', JSON.stringify({stories: localStorageItem.stories}));
+
+    console.log(JSON.parse(localStorage.getItem('stories')));
   }
 
-  constructor() { }
+  private setLocalStorageStories(stories: StoryInfo[]):void {
+    localStorage.setItem('stories', JSON.stringify({stories: this.stories}));
+  }
 }

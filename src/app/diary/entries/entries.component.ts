@@ -19,9 +19,14 @@ export class EntriesComponent implements OnInit {
     this.stories = this.dataService.get();
   }
 
+  remove(i: number){
+    this.dataService.delete(i);
+    let localStorageItem = JSON.parse(localStorage.getItem('stories'));
+    this.stories = localStorageItem.stories as StoryInfo[];
+  }
+
   ngOnInit() {
     this.getStorys();
-    console.log(this.stories);
   }
 
 }

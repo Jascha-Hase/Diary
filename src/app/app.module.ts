@@ -2,14 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TemplateHeaderComponent } from './_template/template-header/template-header.component';
-import { TemplateFooterComponent } from './_template/template-footer/template-footer.component';
-import { TemplateFormComponent } from './_template/template-form/template-form.component';
+import { TemplateHeaderComponent } from './header/template-header/template-header.component';
 import { FormComponent } from './profile/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { BodyComponent } from './addstory/body/body.component';
 import { EntriesComponent } from './diary/entries/entries.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { DataService } from './_service/data.service';
 
 
 
@@ -17,19 +17,18 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StorageServiceModule
   ],
   declarations: [
     AppComponent,
     TemplateHeaderComponent,
-    TemplateFooterComponent,
-    TemplateFormComponent,
     FormComponent,
     BodyComponent,
     EntriesComponent,
     routingComponents,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent,]
 })
 export class AppModule {
