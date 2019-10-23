@@ -12,10 +12,9 @@ export class FormComponent implements OnInit {
   private info: ProfileInfo;
   private saved: boolean = false;
   url: string | ArrayBuffer;
-  
+  result: string;
   constructor() {
     this.info = new ProfileInfo();
-    console.log(this)
   }
 
   ngOnInit() {

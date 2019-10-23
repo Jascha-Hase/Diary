@@ -9,7 +9,7 @@
         <div class="entry" *ngFor="let story of stories; let i = index">
             <div class="day">{{story.date}}</div>
             <div class="story">{{story.story}}</div>
-            <div class="options"><button (click)="dataService.delete(i)">Delete Entrie</button></div>
+            <div class="options"><button (click)="remove(i)">Delete Entrie</button></div>
         </div>
     </div>
 </form>

@@ -15,14 +15,12 @@ export class BodyComponent implements OnInit {
 
   constructor(private dataService: DataService) {
     this.infostory = new StoryInfo();
-    console.log(this)
   }
 
   ngOnInit() {
   }
 
   enter() {
-    console.log(this.infostory);
     this.dataService.add(this.infostory);
     this.infostory = new StoryInfo();
   }

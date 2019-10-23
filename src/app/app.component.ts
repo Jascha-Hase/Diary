@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StoryInfo } from './addstory/body/story-info';
+import { DataService } from './_service/data.service'
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,5 @@ export class AppComponent {
     this.stories.push($event);
     console.log(this.stories);
   }
-
-  receiveMessage($event: string) {
-    this.page = $event;
-  }
-
 }
+
